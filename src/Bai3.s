@@ -40,7 +40,7 @@ loop:
     mul         x21, x20, x20       // x21 = i * i
 
     cmp         x21, x19            // so sánh i * i với n
-    b.eq        is_not_square       // nếu bằng thì n là số chính phương
+    b.eq        is_square       // nếu bằng thì n là số chính phương
     b.gt        is_not_square       // nếu i * i > n thì n ko là số chính phương
 
     add         x20, x20, #1        // i++
