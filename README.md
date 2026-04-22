@@ -15,10 +15,11 @@ compsys-legv8-demo/
 └── src/
     └── Bai1.s
 ```
-## Compile And Run A Source File:
+
+## Compile And Run Your Source File:
 
 ```bash
-    cd src
-    aarch64-linux-gnu-gcc -static filename.s -o filename
-    qemu-aarch64 filename   
+cd src
+aarch64-linux-gnu-gcc -static filename.s -o filename
+qemu-aarch64 filename   
 ```
