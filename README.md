@@ -11,9 +11,14 @@ I didn't have time to try out Linux or WSL and Github Codespaces happened to be 
 
 ```
 compsys-legv8-demo/
+├── .gitignore
 ├── README.md
 └── src/
-    └── Bai1.s
+    ├── Bai1.s
+    ├── Bai2.s
+    ├── Bai3.s
+    ├── Bai4.s
+    └── Bai5.s
 ```
 
 ## Compile And Run Your Source File:
