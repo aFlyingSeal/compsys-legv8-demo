@@ -14,11 +14,8 @@ compsys-legv8-demo/
 ├── README.md
 ├── .gitignore
 └── src/
-    ├── Bai1.s
-    ├── Bai2.s
-    ├── Bai3.s
-    ├── Bai4.s
-    └── Bai5.s
+    ├── legv8   // LEGv8 programs
+    └── x86     // x86 programs
 ```
 
 ## Compile And Run Your Source File:
@@ -26,7 +23,14 @@ compsys-legv8-demo/
 LEGv8:
 
 ```bash
-cd src
-aarch64-linux-gnu-gcc -static filename.s -o filename
-qemu-aarch64 filename   
+aarch64-linux-gnu-gcc -static src/legv8/filename.s -o bin/filename
+qemu-aarch64 bin/filename   
+```
+
+x86:
+
+```bash
+nasm -f elf32 src/x86/filename.asm -o bin/filename.o
+ld -m elf_i386 bin/filename.o -o bin/filename
+bin/filename
 ```
