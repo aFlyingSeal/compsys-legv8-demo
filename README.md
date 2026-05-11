@@ -10,12 +10,16 @@ I didn't have time to try out Linux or WSL and Github Codespaces happened to be 
 ## Repo Structure
 
 ```
-compsys-demo/
+compsys-legv8-demo/
+├── .gitignore
 ├── README.md
 ├── .gitignore
 └── src/
-    └── legv8   // LEGv8 programs
-    └── x86     // x86 programs
+    ├── Bai1.s
+    ├── Bai2.s
+    ├── Bai3.s
+    ├── Bai4.s
+    └── Bai5.s
 ```
 
 ## Compile And Run Your Source File:
@@ -26,10 +30,4 @@ LEGv8:
 cd src
 aarch64-linux-gnu-gcc -static filename.s -o filename
 qemu-aarch64 filename   
-```
-
-x86:
-
-```bash
-
 ```
