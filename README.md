@@ -11,7 +11,6 @@ I didn't have time to try out Linux or WSL and Github Codespaces happened to be 
 
 ```
 compsys-legv8-demo/
-├── .gitignore
 ├── README.md
 ├── .gitignore
 └── src/
