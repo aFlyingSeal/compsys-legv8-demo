@@ -1,4 +1,4 @@
-# compsys-legv8-demo
+# compsys-demo
 
 ## Overview
 
@@ -10,16 +10,26 @@ I didn't have time to try out Linux or WSL and Github Codespaces happened to be 
 ## Repo Structure
 
 ```
-compsys-legv8-demo/
+compsys-demo/
 ├── README.md
+├── .gitignore
 └── src/
-    └── Bai1.s
+    └── legv8   // LEGv8 programs
+    └── x86     // x86 programs
 ```
 
 ## Compile And Run Your Source File:
+
+LEGv8:
 
 ```bash
 cd src
 aarch64-linux-gnu-gcc -static filename.s -o filename
 qemu-aarch64 filename   
+```
+
+x86:
+
+```bash
+
 ```
