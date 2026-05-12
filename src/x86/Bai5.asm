@@ -130,24 +130,34 @@ list_primes:
 
 ; tìm giá trị lớn nhất
 find_max:
-    mov eax, [array]
-    mov ebx, eax        ; max = ebx
-    mov ecx, 1          ; i = 1
+    mov ecx, [n]         ; Lấy số lượng phần tử
+    cmp ecx, 0
+    je .done             ; Nếu n = 0 thì thoát
+
+    mov esi, array       ; Trỏ ESI vào đầu mảng
+    mov ebx, [esi]       ; Giả sử Max là phần tử đầu tiên
+    mov edi, 1           ; Biến đếm i = 1
+
 .loop_max:
-    cmp ecx, [n]
-    jge .done
-    mov edx, [array + ecx*4]
-    cmp edx, ebx
-    jle .next
-    mov ebx, edx
+    cmp edi, ecx
+    jge .print_res       ; Nếu i >= n thì in kết quả
+
+    mov eax, [esi + edi*4] ; Lấy phần tử thứ i
+    cmp eax, ebx         ; So sánh với Max hiện tại
+    jle .next            ; Nếu eax <= ebx thì bỏ qua
+    mov ebx, eax         ; Nếu eax > ebx, cập nhật Max (ebx = eax)
+
 .next:
-    inc ecx
+    inc edi
     jmp .loop_max
-.done:
+
+.print_res:
+    push ebx             ; Lưu tạm Max
     mov eax, msg_max
     call print_string
-    mov eax, ebx
+    pop eax              ; Lấy lại Max để in
     call print_int
+.done:
     ret
 
 ; tính trung bình cộng
